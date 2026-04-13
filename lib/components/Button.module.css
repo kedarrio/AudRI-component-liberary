@@ -1,0 +1,185 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: var(--font-sans);
+  font-weight: 600;
+  letter-spacing: 0.1px;
+  border-radius: var(--btn-radius, 28px);
+  /* M3 standard pill rounding */
+  border: 1px solid transparent;
+  transition: all var(--dur-normal) var(--ease-standard);
+  cursor: pointer;
+  white-space: nowrap;
+  user-select: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn:hover:not(:disabled) {
+  transform: translateY(-1.5px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn:active:not(:disabled) {
+  transform: translateY(0.5px);
+  transition-duration: var(--dur-instant);
+}
+
+.btn:disabled {
+  opacity: 0.38;
+  cursor: not-allowed;
+}
+
+/* Variants - M3 Infused Brand Styling */
+.btn-primary {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  color: var(--color-text-inverse);
+}
+
+.btn-primary:hover:not(:disabled) {
+  background-color: var(--color-primary-hover);
+  border-color: var(--color-primary-hover);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+.btn-primary:active:not(:disabled) {
+  background-color: var(--color-primary-active);
+}
+
+/* M3 Tonal / Secondary style */
+.btn-secondary {
+  background-color: var(--color-primary-subtle);
+  border-color: transparent;
+  color: var(--color-text-primary);
+}
+
+.btn-secondary:hover:not(:disabled) {
+  background-color: var(--color-primary-muted);
+}
+
+.btn-ghost {
+  background-color: transparent;
+  border-color: transparent;
+  color: var(--color-text-secondary);
+}
+
+.btn-ghost:hover:not(:disabled) {
+  background-color: var(--color-surface-raised);
+  color: var(--color-text-primary);
+}
+
+.btn-outline {
+  background-color: transparent;
+  border-color: var(--color-border);
+  color: var(--color-text-primary);
+}
+
+.btn-outline:hover:not(:disabled) {
+  border-color: var(--color-primary-muted);
+  background-color: var(--color-primary-subtle);
+}
+
+.btn-danger {
+  background-color: var(--color-danger-subtle);
+  border-color: transparent;
+  color: var(--color-danger);
+}
+
+.btn-danger-solid {
+  background-color: var(--color-danger);
+  border-color: var(--color-danger);
+  color: var(--color-text-inverse);
+}
+
+.btn-brand-cta {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  color: var(--color-text-inverse);
+  padding: var(--space-8) var(--space-24);
+  font-size: 16px;
+  height: 64px;
+  border-radius: 32px;
+  box-shadow: var(--shadow-brand-cta);
+}
+
+/* M3 Active indicator / Focus */
+.btn.btn-active {
+  border-color: var(--color-primary);
+  background-color: var(--color-primary-subtle);
+  color: var(--color-primary);
+}
+
+/* Sizes - Refined Proportions */
+.btn-xs {
+  height: 28px;
+  padding: 0 12px;
+  font-size: 11px;
+}
+
+.btn-sm {
+  height: 32px;
+  padding: 0 16px;
+  font-size: 12px;
+}
+
+.btn-md {
+  height: 40px;
+  padding: 0 20px;
+  font-size: 14px;
+}
+
+.btn-lg {
+  height: 48px;
+  padding: 0 28px;
+  font-size: 14px;
+}
+
+.btn-xl {
+  height: 56px;
+  padding: 0 44px;
+  font-size: 16px;
+}
+
+/* Icon Handling - Adjusted for Symmetry */
+.btn:has(.material-symbols-rounded) {
+  padding-left: 14px;
+}
+
+.btn-xs:has(.material-symbols-rounded) { padding-left: 8px; }
+.btn-sm:has(.material-symbols-rounded) { padding-left: 12px; }
+.btn-md:has(.material-symbols-rounded) { padding-left: 14px; }
+
+/* Icon Only (FAB/IconButton style) */
+.btn-icon {
+  padding: 0 !important;
+  aspect-ratio: 1 / 1;
+  flex-shrink: 0;
+}
+
+.btn-icon.btn-xs {
+  width: 28px;
+  height: 28px;
+}
+
+.btn-icon.btn-sm {
+  width: 32px;
+  height: 32px;
+}
+
+.btn-icon.btn-md {
+  width: 40px;
+  height: 40px;
+}
+
+.btn-icon.btn-lg {
+  width: 48px;
+  height: 48px;
+}
+
+.btn-icon.btn-xl {
+  width: 56px;
+  height: 56px;
+}

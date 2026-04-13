@@ -1,0 +1,102 @@
+.tabs {
+  display: flex;
+  align-items: center;
+  gap: var(--space-10);
+  position: relative;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.pill-container {
+  display: inline-flex;
+  gap: var(--space-1);
+  padding: var(--space-1);
+  background: var(--color-surface-raised);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: inset 0 1px 2px rgba(0,0,0,0.02);
+  position: relative;
+  overflow: hidden;
+}
+
+.underlineIndicator {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  background-color: var(--color-primary);
+  transition: transform var(--dur-snappy) var(--ease-spring),
+              width var(--dur-snappy) var(--ease-spring),
+              opacity var(--dur-fast) var(--ease-standard);
+  z-index: 1;
+  transform-origin: left;
+}
+
+.pillIndicator {
+  position: absolute;
+  background-color: var(--color-surface);
+  border-radius: 7px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.1), 0 3px 8px rgba(0,0,0,0.05);
+  transition: transform var(--dur-snappy) var(--ease-spring),
+              width var(--dur-snappy) var(--ease-spring),
+              height var(--dur-snappy) var(--ease-spring),
+              opacity var(--dur-fast) var(--ease-standard);
+  z-index: 0;
+}
+
+.tab {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-4) 0;
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--color-text-tertiary);
+  transition: all var(--dur-normal) var(--ease-standard);
+  cursor: pointer;
+  margin-bottom: -1px;
+  position: relative;
+  z-index: 2;
+}
+
+.tab:hover:not(.active):not(.pill_active) {
+  color: var(--color-text-primary);
+}
+
+.active {
+  color: var(--color-primary);
+  font-weight: 600;
+  cursor: default;
+}
+
+/* Pill Styles */
+.pill {
+  padding: 8px 16px;
+  border-radius: 7px;
+  border: none;
+  background: none;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--color-text-secondary);
+  transition: all var(--dur-fast) var(--ease-standard);
+  margin-bottom: 0;
+  border-bottom: none;
+  z-index: 2;
+}
+
+.pill:hover:not(.pill_active) {
+  color: var(--color-text-primary);
+}
+
+.pill_active {
+  color: var(--color-text-primary);
+  cursor: default;
+}
+
+.icon {
+  font-size: 16px;
+}

@@ -1,0 +1,39 @@
+.spinner {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  animation: spin 1s linear infinite;
+  color: var(--color-primary);
+}
+
+.spinner_xs { width: 14px; height: 14px; }
+.spinner_sm { width: 18px; height: 18px; }
+.spinner_md { width: 24px; height: 24px; }
+.spinner_lg { width: 32px; height: 32px; }
+.spinner_xl { width: 44px; height: 44px; }
+
+.circle {
+  stroke: currentColor;
+  stroke-linecap: round;
+  animation: spinner-dash 1.5s ease-in-out infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes spinner-dash {
+  0% {
+    stroke-dasharray: 1, 150;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: 90, 150;
+    stroke-dashoffset: -35;
+  }
+  100% {
+    stroke-dasharray: 90, 150;
+    stroke-dashoffset: -124;
+  }
+}

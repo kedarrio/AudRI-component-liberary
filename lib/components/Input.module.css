@@ -1,0 +1,99 @@
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 100%;
+}
+
+.input-label {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--color-text-secondary);
+}
+
+.input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input {
+  width: 100%;
+  padding: 10px 16px;
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-md);
+  font-size: 13px;
+  color: var(--color-text-primary);
+  background-color: var(--color-surface);
+  transition: border-color var(--dur-fast), box-shadow var(--dur-fast);
+}
+
+.textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.input:hover:not(:disabled) {
+  border-color: var(--color-border-strong);
+}
+
+.input:focus:not(:disabled) {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(245, 133, 80, 0.12);
+}
+
+.input:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  background-color: var(--color-surface-raised);
+}
+
+.input-error {
+  border-color: var(--color-danger) !important;
+}
+
+.has-icon {
+  padding-left: 36px;
+}
+
+.has-toggle {
+  padding-right: 40px;
+}
+
+.input-icon {
+  position: absolute;
+  left: 12px;
+  color: var(--color-text-tertiary);
+  pointer-events: none;
+}
+
+.password-toggle {
+  position: absolute;
+  right: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  padding: 0;
+  color: var(--color-text-tertiary);
+  cursor: pointer;
+  transition: color var(--dur-fast);
+}
+
+.password-toggle:hover:not(:disabled) {
+  color: var(--color-text-secondary);
+}
+
+.input-hint {
+  font-size: 11px;
+  font-weight: 400;
+  color: var(--color-text-tertiary);
+}
+
+.input-error-msg {
+  font-size: 11px;
+  font-weight: 400;
+  color: var(--color-danger);
+}

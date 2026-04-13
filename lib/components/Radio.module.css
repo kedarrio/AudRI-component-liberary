@@ -1,0 +1,56 @@
+.radio {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.disabled {
+  opacity: 0.38;
+  cursor: not-allowed;
+}
+
+.input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.box {
+  width: 18px;
+  height: 18px;
+  border: 1.5px solid var(--color-border-strong);
+  border-radius: var(--radius-full);
+  background-color: var(--color-surface);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--dur-fast) var(--ease-standard);
+  flex-shrink: 0;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  background-color: var(--color-primary);
+  border-radius: var(--radius-full);
+  transform: scale(0);
+  transition: transform var(--dur-normal) var(--ease-spring);
+}
+
+.input:checked + .box {
+  border-color: var(--color-primary);
+  background-color: var(--color-primary-subtle);
+}
+
+.input:checked + .box .dot {
+  transform: scale(1);
+}
+
+.label {
+  font-size: 13px;
+  color: var(--color-text-primary);
+}

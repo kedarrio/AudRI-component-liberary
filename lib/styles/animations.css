@@ -1,0 +1,116 @@
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fade-down {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes scale-in {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes slide-in-up {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes spinner-dash {
+  0% {
+    stroke-dasharray: 1, 150;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: 90, 150;
+    stroke-dashoffset: -35;
+  }
+  100% {
+    stroke-dasharray: 90, 150;
+    stroke-dashoffset: -124;
+  }
+}
+
+@keyframes pipeline-dashmove {
+  to {
+    stroke-dashoffset: -1000;
+  }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes draw-line {
+  from { stroke-dashoffset: 1000; }
+  to { stroke-dashoffset: 0; }
+}
+
+.anim-fade-in { animation: fade-in var(--dur-normal) var(--ease-decelerate); }
+.anim-fade-up { animation: fade-up var(--dur-moderate) var(--ease-decelerate); }
+.anim-fade-down { animation: fade-down var(--dur-moderate) var(--ease-decelerate); }
+.anim-scale-in { animation: scale-in var(--dur-moderate) var(--ease-spring); }
+.anim-spin { animation: spin 1s linear infinite; }
+
+.delay-1 { animation-delay: 60ms; }
+.delay-2 { animation-delay: 120ms; }
+.delay-3 { animation-delay: 180ms; }
+.delay-4 { animation-delay: 240ms; }
+.delay-5 { animation-delay: 300ms; }
+.delay-6 { animation-delay: 360ms; }
+
+/* Line Art */
+.line-primary { stroke: var(--color-primary); fill: none; }
+.line-muted { stroke: var(--color-border-strong); fill: none; }
+.line-text { stroke: var(--color-text-primary); fill: none; }
+.line-light { stroke: var(--color-border); fill: none; }
+.line-fill-sub { stroke: var(--color-primary-muted); fill: var(--color-primary-subtle); }
+
+.line-animated {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+}
+
+.line-animated.active {
+  animation: draw-line 1.2s var(--ease-decelerate) forwards;
+}
+
+/* Tooltip */
+[data-tooltip] {
+  position: relative;
+}
+
+[data-tooltip]::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-4px);
+  padding: 4px 8px;
+  background: var(--color-text-primary);
+  color: var(--color-text-inverse);
+  font-size: 10px;
+  font-weight: 500;
+  border-radius: var(--radius-sm);
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: all var(--dur-fast) var(--ease-standard);
+}
+
+[data-tooltip]:hover::after {
+  opacity: 1;
+  transform: translateX(-50%) translateY(-8px);
+}

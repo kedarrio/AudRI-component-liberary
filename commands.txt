@@ -1,0 +1,25 @@
+# AuDRI Design System - Testing & Validation Commands
+
+## Linting
+Runs ESLint to check for code style and potential errors.
+```bash
+npm run lint
+```
+
+## Type Checking
+Runs TypeScript compiler in no-emit mode to verify type safety.
+```bash
+npm run typecheck
+```
+
+## Full Build Validation
+Compiles TypeScript and bundles the application with Vite.
+```bash
+npm run build
+```
+
+## Development Preview
+Starts the Vite development server.
+```bash
+npm run dev
+```

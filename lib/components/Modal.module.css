@@ -1,0 +1,94 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: var(--z-modal);
+  padding: var(--space-4);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--dur-moderate) var(--ease-out-expo);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.blur {
+  backdrop-filter: blur(0px);
+  -webkit-backdrop-filter: blur(0px);
+  transition: opacity var(--dur-moderate) var(--ease-out-expo),
+              backdrop-filter var(--dur-moderate) var(--ease-out-expo),
+              -webkit-backdrop-filter var(--dur-moderate) var(--ease-out-expo);
+}
+
+.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.open.blur {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.modal {
+  width: 100%;
+  max-width: 520px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-xl);
+  transform: scale(0.9) translateY(30px);
+  opacity: 0;
+  transition: transform var(--dur-moderate) var(--ease-out-expo), 
+              opacity var(--dur-moderate) var(--ease-out-expo);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
+}
+
+.open .modal {
+  transform: scale(1) translateY(0);
+  opacity: 1;
+}
+
+.header {
+  padding: var(--space-6);
+  border-bottom: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.title {
+  margin: 0;
+  font-family: var(--font-sans);
+  color: var(--color-text-primary);
+}
+
+.closeBtn {
+  background: none;
+  border: none;
+  color: var(--color-text-tertiary);
+  cursor: pointer;
+  transition: color var(--dur-fast);
+}
+
+.closeBtn:hover {
+  color: var(--color-text-primary);
+}
+
+.content {
+  padding: var(--space-6);
+  overflow-y: auto;
+  max-height: 70vh;
+}
+
+.footer {
+  padding: var(--space-4) var(--space-6);
+  border-top: 1px solid var(--color-border);
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--space-3);
+  background: var(--color-surface-raised);
+}

@@ -1,0 +1,28 @@
+.container {
+  overflow: visible;
+}
+
+.path {
+  fill: none;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.area {
+  opacity: 0.15;
+}
+
+.line {
+  stroke: var(--color-primary);
+}
+
+.lineArea {
+  fill: var(--color-primary);
+}
+
+.successLine { stroke: var(--color-success); }
+.successArea { fill: var(--color-success); }
+
+.dangerLine { stroke: var(--color-danger); }
+.dangerArea { fill: var(--color-danger); }

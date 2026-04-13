@@ -1,0 +1,166 @@
+.section {
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 24px;
+  color: var(--color-text-primary);
+}
+
+.description {
+  font-size: 14px;
+  color: var(--color-text-secondary);
+  margin-bottom: 40px;
+  max-width: 660px;
+  line-height: 1.5;
+}
+
+.subSection {
+  margin-bottom: 48px;
+}
+
+.subTitle {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 16px;
+  color: var(--color-text-tertiary);
+}
+
+.grid {
+  display: grid;
+  gap: 20px;
+}
+
+/* Common Flex Layouts */
+.flexRow {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+}
+
+.flexColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* Swatch styles used in colors documentation */
+.swatchContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.swatchInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.swatchLabel {
+  font-size: 12px;
+  font-weight: 600;
+  margin: 0;
+  color: var(--color-text-primary);
+}
+
+.swatchHex {
+  font-size: 11px;
+  color: var(--color-text-tertiary);
+  margin: 2px 0 4px;
+}
+
+.swatchDesc {
+  font-size: 10px;
+  color: var(--color-text-secondary);
+  margin: 0;
+  opacity: 0.8;
+}
+
+.iconTile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 20px 12px;
+  background: var(--color-surface);
+  border-radius: 8px;
+  border: 1px solid var(--color-border);
+  transition: all 0.2s ease;
+}
+
+.iconTile:hover {
+  background: var(--color-surface-raised);
+  border-color: var(--color-primary-muted);
+  transform: translateY(-2px);
+}
+
+.swatch {
+  height: 80px;
+  width: 100%;
+  border-radius: 6px;
+}
+
+.swatchBorder {
+  border: 1px solid var(--color-border);
+}
+
+.grid140 {
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+}
+
+/* M3 Component Gallery */
+.galleryGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 16px;
+  margin-top: 48px;
+}
+
+.galleryCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 24px;
+  background-color: var(--color-surface-raised);
+  border-radius: 24px; /* M3 high radius */
+  border: 1px solid var(--color-border);
+  cursor: pointer;
+  transition: all var(--dur-normal) var(--ease-standard);
+  text-align: center;
+}
+
+.galleryCard:hover {
+  background-color: var(--color-surface-overlay);
+  border-color: var(--color-primary-muted);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.05);
+}
+
+.galleryIcon {
+  width: 64px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-surface);
+  border-radius: 16px;
+  color: var(--color-primary);
+}
+
+.galleryIcon :global(.material-symbols-rounded) {
+  font-size: 32px;
+}
+
+.galleryTitle {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color-text-primary);
+}

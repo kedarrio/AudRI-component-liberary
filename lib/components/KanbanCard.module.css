@@ -1,0 +1,70 @@
+.card {
+  padding: var(--space-5);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  transition: all var(--dur-fast) var(--ease-standard);
+  cursor: grab;
+}
+
+.card:hover {
+  border-color: var(--color-border-strong);
+  box-shadow: var(--shadow-md);
+}
+
+.card:active {
+  cursor: grabbing;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.statusTag {
+  padding: 2px 8px;
+  border-radius: var(--radius-full);
+  font-family: var(--font-mono);
+  font-size: 9px;
+  font-weight: 600;
+  text-transform: uppercase;
+  background: var(--color-surface-raised);
+}
+
+.title {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  line-height: 1.4;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: var(--space-2);
+}
+
+.meta {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--color-text-tertiary);
+  font-family: var(--font-mono);
+  font-size: 10px;
+}
+
+.metaIcon {
+  font-size: 12px;
+}
+
+/* Status variants */
+.status_progress { background: var(--color-warning-subtle); color: var(--color-warning-text); border: 1px solid var(--color-warning-border); }
+.status_review { background: var(--color-info-subtle); color: var(--color-info-text); border: 1px solid var(--color-info-border); }
+.status_done { background: var(--color-success-subtle); color: var(--color-success-text); border: 1px solid var(--color-success-border); }

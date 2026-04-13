@@ -1,0 +1,38 @@
+.loading_line {
+  position: relative;
+  height: 3px;
+  width: 100%;
+  background-color: var(--color-surface-raised);
+  overflow: hidden;
+}
+
+.loading_line::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 30%;
+  background-color: var(--color-primary);
+  animation: indeterminate 1.5s infinite var(--ease-standard);
+}
+
+@keyframes indeterminate {
+  0% {
+    left: -30%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+/* Glass variant (Floating) */
+.glass {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+}
+
+.glass::after {
+  background: var(--color-primary);
+  box-shadow: 0 0 10px var(--color-primary);
+}

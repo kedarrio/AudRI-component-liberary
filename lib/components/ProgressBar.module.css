@@ -1,0 +1,23 @@
+.track {
+  width: 100%;
+  background-color: var(--color-surface-overlay);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+.size-sm { height: 4px; }
+.size-md { height: 8px; }
+
+.fill {
+  height: 100%;
+  width: 100%;
+  transform-origin: left;
+  border-radius: var(--radius-full);
+  transition: transform var(--dur-slow) var(--ease-decelerate);
+}
+
+.fill-primary { background-color: var(--color-primary); }
+.fill-success { background-color: var(--color-success-dot); }
+.fill-danger { background-color: var(--color-danger-dot); }
+.fill-warning { background-color: var(--color-warning-dot); }
+.fill-info { background-color: var(--color-info-dot); }

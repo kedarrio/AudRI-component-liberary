@@ -1,0 +1,85 @@
+.stepper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  width: 100%;
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+  position: relative;
+  z-index: 1;
+  background: var(--color-bg); /* Match section background */
+  padding: 0 var(--space-4);
+  cursor: pointer;
+}
+
+.circle {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--color-border-strong);
+  background: var(--color-surface);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-text-tertiary);
+  transition: all var(--dur-normal) var(--ease-standard);
+}
+
+.label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-text-tertiary);
+}
+
+.active .circle {
+  border-color: var(--color-primary);
+  background: var(--color-primary-subtle);
+  color: var(--color-primary);
+  box-shadow: 0 0 12px rgba(245, 133, 80, 0.2);
+}
+
+.active .label {
+  color: var(--color-text-primary);
+  font-weight: 700;
+}
+
+.complete .circle {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: #fff;
+}
+
+.complete .label {
+  color: var(--color-text-secondary);
+}
+
+.line {
+  position: absolute;
+  top: 16px; /* center of 32px circle */
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: var(--color-border);
+  z-index: 0;
+}
+
+.progress {
+  position: absolute;
+  top: 16px;
+  left: 0;
+  height: 1px;
+  background: var(--color-primary);
+  transition: width var(--dur-slow) var(--ease-standard);
+  z-index: 0;
+}
